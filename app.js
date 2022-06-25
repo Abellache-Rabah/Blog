@@ -1,5 +1,3 @@
-//jshint esversion:6
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const ejs = require("ejs");
@@ -29,13 +27,6 @@ const homePost = new Post ({
 });
 
 const defaultPosts =[homePost];
-
-
-
-
-
-
-
 app.get("/",function(req , res){
 
   Post.find({},function(err,result){
@@ -46,19 +37,7 @@ app.get("/",function(req , res){
       
     }
 });
-
 });
-
-
-
-
-
-
-
-
-
-
-
 app.get("/posts/:topic" ,function(req , res){
   const reqTitle = _.lowerCase(req.params.topic);
  
@@ -74,44 +53,23 @@ app.get("/posts/:topic" ,function(req , res){
     }
   });
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 app.get("/about",function(req , res){
   res.render("about", {
     aboutContent : aboutContent
   });
   
 });
-
-
-
 app.get("/zidpost",function(req , res){
   res.render("zidpost");
   
 });
-
 app.post("/zidpost",function(req , res){
-
   const post = new Post ({
     title : req.body.postTitle,
     body : req.body.postBody
   });
-
   post.save();
   res.redirect("/");
-
 });
 
 
