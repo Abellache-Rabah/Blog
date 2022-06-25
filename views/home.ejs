@@ -1,18 +1,25 @@
 
 <%- include('partials/header'); -%>
-<h1>Home</h1>
+
+<span class="badge bg-success">New Posts: 4</span>
+<h1>Welcome !</h1>
 <p>
 	<%= homeStartingContent %>
 </p>
-
-	<%posts.forEach(function(item){%>
- 	<h1> 
- 		<%=item.title%>
- 	</h1>
+	<div class="container">
+<div class="row allPosts gap-3">
+	<%posts.forEach(function(post){%>
+	<div class="post col-lg-3 col-md-4 m-1 mb-1" >
+ 	<h3 class="posttitle"> 
+ 		<%=post.title.substring(0, 15) + "..." %>
+ 	</h3>
  	<p>
- 		<%= item.body.substring(0, 100) + "..." %>
- 		<a href="/posts/<%=item.title%>"> Read More </a>
+ 		<%= post.body.substring(0, 150) + " ...." %>
+ 		<a href="/posts/<%=post._id%>" > Read More </a>
  	</p>
+ 	</div>
 	<%});%>
 
+</div>
+</div>
 <%- include('partials/footer'); -%>

@@ -1,7 +1,7 @@
 <%- include('partials/header'); -%>
 
-<h1>Compose</h1>
-<form action='/compose' method="POST">
+<h1>POST</h1>
+<form action='/zidpost' method="POST">
 	<div class="form-group">
 		<label>Title</label>
 		<input class="form-control" type="text" placeholder="Title" name="postTitle">
@@ -11,7 +11,9 @@
 	<textarea class="form-control" name="postBody" rows="5" cols="30">
 	</textarea>
 	</div>
-	<button type="submit" name="button" class="btn btn-primary">Publish</button>
+	<div class="d-grid ">
+	<button type="submit" name="button" class="btn btn-outline-dark m-3">Publish</button>
+	</div>
 </form>
 
 
