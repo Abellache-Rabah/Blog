@@ -19,6 +19,8 @@ $ cd Blog
 $ sudo mongod
 $ node app.js
 ```
+open you browser on http://localhost:3000/
+post on http://localhost:3000/zidpost
 
 
 ## Authors
